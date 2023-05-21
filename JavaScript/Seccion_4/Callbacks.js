@@ -102,7 +102,7 @@ console.log( operacion("Hola", "mundo", function(a,b){ return `${a} ${b}!`} ) );
 
 //              index:0  index:1  index:2  index:3 index:4
 let personas = ["Victor","Nelson","Pedro","Kevin","Adaff"];
-
+let saludos = [];
 // console.log(personas[0])
 // console.log(personas[1])
 // console.log(personas[2])
@@ -119,17 +119,20 @@ let personas = ["Victor","Nelson","Pedro","Kevin","Adaff"];
 //     console.log(`Hola ${parametro}`)
 // }
 
+clonMap(personas, (datos_recibidos)=>{
+    saludos.push(datos_recibidos)
+    console.log(datos_recibidos)
+})
 
 function clonMap(miArray, miCallback){
 
-    for(let elemento = 0; elemento < miArray.length; elemento++){
-        miCallback(`Hola ${miArray[elemento]}!`)
-    }
+        for(let elemento = 0; elemento < miArray.length; elemento++){
+            miCallback(`Hola ${miArray[elemento]}!`)
+        }
 
 }
 
 
-let saludos= [];
 
 // Al llamar la funcion "clonMap()", se le pasan 2 parametros, un array y un callbak,
 // el callback viajara y sera iniciado en la funcion "clonMap()", recibira datos para 
@@ -143,10 +146,7 @@ let saludos= [];
 // uno por cada persona (elemento) del array "personas".
 
 
-clonMap(personas, (datos_recibidos)=>{
-    saludos.push(datos_recibidos)
-    console.log(datos_recibidos)
-})
+
 
 
 
